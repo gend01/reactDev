@@ -7,7 +7,8 @@ button {
     font-size: 15px;
     line-height: 15px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: #FFFFFF;
     padding: 18px 22px;
@@ -16,8 +17,19 @@ button {
 }
 .btn__add {
     background: #403EDB;
-
+}
+.btn__create {
+    background: #3ABB67;
+}
+.btn__cancel {
+    background: #FF333A;
 }
 .btn__add:hover {
     background: #1d19e9;
+}
+.btn__create:hover {
+    background: #219F4D;
+}
+.btn__cancel:hover {
+    background: #fc4a50;
 }
