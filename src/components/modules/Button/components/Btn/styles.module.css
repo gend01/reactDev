@@ -1,0 +1,23 @@
+button {
+    border-radius: 6.96607px;
+    border: none;
+    box-shadow: none;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 15px;
+    line-height: 15px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 18px 22px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.btn__add {
+    background: #403EDB;
+
+}
+.btn__add:hover {
+    background: #1d19e9;
+}

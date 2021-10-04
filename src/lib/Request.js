@@ -1,4 +1,4 @@
-import { BASE_URL, API_KEY } from "../system/api.config";
+import { BASE_URL } from "../system/api.config";
 
 class Request {
     constructor(path) {
