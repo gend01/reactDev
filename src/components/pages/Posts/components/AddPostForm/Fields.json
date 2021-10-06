@@ -1,0 +1,20 @@
+[
+    {
+        "name": "title",
+        "type": "text",
+        "placeholder": "enter title",
+        "regex": "^[0-9a-zA-Z\\s]{5,100}$",
+        "className": "form__field",
+        "errorText": "Incorect title value",
+        "isValid": true
+    },
+    {
+        "name": "body",
+        "type": "description",
+        "placeholder": "enter description",
+        "regex": "^[0-9a-zA-Z\\s]{5,200}$",
+        "className": "form__field",
+        "errorText": "Incorect description value",
+        "isValid": true
+    }
+]
