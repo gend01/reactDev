@@ -14,6 +14,7 @@ function List({ posts }) {
                     body={post.body} 
                     id={post.id}
                     userId={post.userId}
+                    key={post.id}
                 />
            ))}
         </div>
@@ -21,16 +22,14 @@ function List({ posts }) {
 }
 
 
-// List.defaultProp = {
-//     posts: PropTypes.arrayOf(
-//         PropTypes.shape({
-//             title: PropTypes.string.isRequired,
-//             body: PropTypes.string.isRequired,
-//             id: PropTypes.number.isRequired,
-//             userId: PropTypes.number.isRequired,
-//         })
-//     ),
-// };
+List.defaultProp = {
+    posts: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: 'default title',
+            body: 'default body',
+        })
+    ),
+};
 List.propTypes = {
     posts: PropTypes.arrayOf(
         PropTypes.shape({

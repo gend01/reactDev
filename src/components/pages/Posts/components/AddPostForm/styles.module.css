@@ -1,0 +1,24 @@
+.addPostForm {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(45, 44, 56, 0.788);
+}
+.addPostForm__form {
+    max-width: 500px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 7px rgba(29, 32, 46, 0.1);
+    border-radius: 15px;
+    margin: 150px auto 0;
+    padding: 60px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.addPostForm__form button {
+    flex-basis: 45%;
+}
