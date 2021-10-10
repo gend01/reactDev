@@ -19,10 +19,35 @@ function Posts() {
         fetch(`https://jsonplaceholder.typicode.com/posts`).then((response) => response.json())
         .then((data) => setState({ ...state, posts: data}))
     },[])
+    
+   const onAddFormSubmit = (fields, isValidForm) => {
+        
+      
+        const fetchFields = fields.reduce((ac, field) => {
+            ac[field.name] = field.value;
+            return (ac);
+            
+        }, {});
+      
+        fetch('https://jsonplaceholder.typicode.com/posts/', {
+            method: 'POST',
+            body: JSON.stringify({fetchFields}),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then((response) => response.json())
+        .then((post) => {
+            setState({ 
+                ...state, isShowAddPostForm: false, posts: [...state.posts, {...post.fetchFields, id: post.id, userId: post.id}]});
 
-   const onAddFormSubmit = () => {
-       console.log('work form');
+            }
+        );
+        
    };
+ 
+   
+   
    const onShowForm = () => {
         setState({ ...state, isShowAddPostForm: !state.isShowAddPostForm});
    };

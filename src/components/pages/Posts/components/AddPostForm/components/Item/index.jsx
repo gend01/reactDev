@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 
 
-function Item({ name, type, placeholder, onChange, className, errorText, isValid }) {
+function Item({ name, type, placeholder, onChange, className, errorText, isValid, value }) {
 
     const inputComponent = type === 'description' ? (
     <textarea 
@@ -11,6 +11,7 @@ function Item({ name, type, placeholder, onChange, className, errorText, isValid
         placeholder={placeholder} 
         onChange={onChange} 
         className={styles[className]}
+        value={value}
 />) : (
     <input 
         name={name} 
@@ -18,11 +19,12 @@ function Item({ name, type, placeholder, onChange, className, errorText, isValid
         placeholder={placeholder} 
         onChange={onChange} 
         className={styles[className]}
+        value={value}
     />
 );
 
 return (
-    <div>
+    <div className={styles.form__row}>
         {inputComponent}
         {!isValid && <span>{errorText}</span>}
     </div>
@@ -38,6 +40,7 @@ return (
 Item.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     isValid: PropTypes.bool.isRequired,
     placeholder: PropTypes.string,

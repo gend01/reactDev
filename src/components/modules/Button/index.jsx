@@ -17,7 +17,7 @@ function Button({ type, href, onClick, title, className}) {
 
 Button.propTypes = {
     type: PropTypes.string.isRequired,
-    href: PropTypes.string.isRequired,
+    href: PropTypes.string,
     onClick: PropTypes.func.isRequired,
     title: PropTypes.string.isRequired,
     className: PropTypes.string.isRequired,

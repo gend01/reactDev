@@ -23,7 +23,11 @@ function Post(props) {
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts?id=${id}`).then((response) => response.json())
         .then((data) => setState({ ...state, post: data[0]}))
-    },[])
+    },[]);
+
+    
+
+    
 
 
 

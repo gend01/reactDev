@@ -9,6 +9,16 @@ function AddPostForm({ isShow, onSubmit, onCancel }) {
 
     const [fields, setFields] = useState(dataFields);
    
+    const onCloseForm = () => {
+        setFields(dataFields);
+        onCancel();
+    }
+    const onSubmitForm = () => {
+        const isValid = !fields.find((field) => !field.isValid);
+
+        onSubmit(fields, isValid);
+    }
+   
     const onValidatePost = (value, regex) => {
         const regExp = new RegExp(regex);
         return regExp.test(value);
@@ -26,6 +36,7 @@ function AddPostForm({ isShow, onSubmit, onCancel }) {
         
         const updatedField = {
             ...targetField,
+            value: inputValue,
             isValid,
         }
         
@@ -44,13 +55,13 @@ function AddPostForm({ isShow, onSubmit, onCancel }) {
                 
                 <Button 
                     type="btn" 
-                    onClick={onSubmit} 
+                    onClick={onSubmitForm} 
                     title="Create" 
                     className="btn__create"
                 />
                 <Button 
                     type="btn" 
-                    onClick={onCancel} 
+                    onClick={onCloseForm} 
                     title="Cancel" 
                     className="btn__cancel"
                 />
@@ -63,7 +74,7 @@ function AddPostForm({ isShow, onSubmit, onCancel }) {
 
 AddPostForm.propTypes = {
     isShow: PropTypes.bool,
-    onSumbit: PropTypes.func.isRequired,
+    onSumbit: PropTypes.func,
     onCancel: PropTypes.func.isRequired,
 };
 export default AddPostForm;

@@ -14,6 +14,7 @@ function List({ posts }) {
                     body={post.body} 
                     id={post.id}
                     userId={post.userId}
+                    key={post.id}
                 />
            ))}
         </div>

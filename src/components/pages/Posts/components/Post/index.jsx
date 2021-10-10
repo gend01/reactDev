@@ -22,6 +22,7 @@ function Post({ title, body, id, userId }) {
 
 Post.defaultProps = {
     title: "default title",
+    body: "default body",
 };
 
 Post.propTypes = {
